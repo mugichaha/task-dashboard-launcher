@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>タスク管理</title>
+
+  <!-- iOS がホーム画面アイコンに使う（このページは top-level なので確実に届く） -->
+  <link rel="apple-touch-icon" href="icon-180.png">
+  <link rel="icon" type="image/png" href="icon-192.png">
+  <link rel="manifest" href="manifest.json"><!-- 主に Android 用。iOS では無害 -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="タスク管理">
+  <meta name="theme-color" content="#1e3a5f">
+
+  <script>
+    var APP_URL = "https://script.google.com/macros/s/AKfycbyyNBxkm3NWMwMu90NFRYn60aTuvnkIJLHkmEMaeDH5kFX3CdCo4y1TvOMxd-GL0KCiwg/exec";
+    // ホーム画面アイコンから起動された時だけアプリ本体へ自動転送。
+    // 通常ブラウザで開いた時は下の案内を表示する（ここでホーム画面に追加してもらう）。
+    if (window.navigator.standalone === true) {
+      window.location.replace(APP_URL);
+    }
+  </script>
+
+  <style>
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      font-family: -apple-system, "Hiragino Kaku Gothic ProN", sans-serif;
+      background: #1e3a5f; color: #f1f5f9;
+      display: flex; align-items: center; justify-content: center;
+      padding: 24px; text-align: center;
+    }
+    .card { max-width: 360px; width: 100%; }
+    .app-icon {
+      width: 96px; height: 96px; border-radius: 22px;
+      box-shadow: 0 8px 24px rgba(0,0,0,.35); margin: 0 auto 20px; display: block;
+    }
+    h1 { font-size: 1.25rem; margin: 0 0 6px; }
+    .sub { font-size: .9rem; color: #cbd5e1; margin: 0 0 28px; line-height: 1.6; }
+    .open-btn {
+      display: block; width: 100%; padding: 14px; margin-bottom: 24px;
+      background: #f1f5f9; color: #1e3a5f; font-size: 1rem; font-weight: 700;
+      border: none; border-radius: 12px; text-decoration: none; cursor: pointer;
+    }
+    .open-btn:active { background: #cbd5e1; }
+    .guide {
+      background: rgba(255,255,255,.08); border-radius: 12px;
+      padding: 16px 18px; font-size: .85rem; line-height: 1.9; text-align: left;
+    }
+    .guide b { color: #fff; }
+    .guide ol { margin: 8px 0 0; padding-left: 1.3em; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img class="app-icon" src="icon-192.png" alt="タスク管理アイコン">
+    <h1>タスク管理</h1>
+    <p class="sub">ダッシュボードを開きます</p>
+
+    <a class="open-btn" href="https://script.google.com/macros/s/AKfycbyyNBxkm3NWMwMu90NFRYn60aTuvnkIJLHkmEMaeDH5kFX3CdCo4y1TvOMxd-GL0KCiwg/exec">今すぐ開く</a>
+
+    <div class="guide">
+      <b>📲 ホーム画面に追加する</b>
+      <ol>
+        <li>共有メニュー（□に↑）を開く</li>
+        <li>「ホーム画面に追加」をタップ</li>
+        <li>追加されたアイコンから起動すると、このダッシュボードが開きます</li>
+      </ol>
+    </div>
+  </div>
+</body>
+</html>
